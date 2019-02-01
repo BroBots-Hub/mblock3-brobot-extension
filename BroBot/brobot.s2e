@@ -110,17 +110,21 @@
         "work": "driver.turnRight({0}, 1.5);\n",
         "loop": ""
       }
+    ],
+    [
+      "r",
+      "get distance",
+      "getDistance",
+      {
+        "setup": "",
+        "inc": "",
+        "def": "int getDistance(){\npinMode(13, OUTPUT);\ndigitalWrite(13, LOW);\ndelayMicroseconds(2);\ndigitalWrite(13, HIGH);\ndelayMicroseconds(10);\ndigitalWrite(13, LOW);\npinMode(12, INPUT);\nreturn pulseIn(12, HIGH) / 58;\n  }",
+        "work": "getDistance()",
+        "loop": ""
+      }
     ]
   ],
   "menus": {},
   "values": {},
-  "translators": {
-    "zh_CN": {
-      "Demo Program": "演示程序",
-      "HIGH": "高电平",
-      "LOW": "低电平",
-      "digitalWrite( %n , %d.digital )": "数字口输出( %n ,%d.digital )",
-      "blink": "闪烁"
-    }
-  }
+  "translators": {}
 }
