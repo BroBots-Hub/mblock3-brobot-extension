@@ -5,11 +5,6 @@
 
   ext.runArduino = function() {};
 
-  var _level = 0;
-  ext.blink = function() {
-    device.send([0x22, 0x23]);
-  };
-
   function processData(bytes) {
     trace(bytes);
   }
@@ -42,7 +37,7 @@
       tryNextDevice();
       return;
     }
-    device.set_receive_handler("demo", function(data) {
+    device.set_receive_handler("BroBot", function(data) {
       processData(data);
     });
   }
@@ -58,10 +53,10 @@
   };
 
   ext._getStatus = function() {
-    if (!device) return { status: 1, msg: "demo disconnected" };
-    return { status: 2, msg: "demo connected" };
+    if (!device) return { status: 1, msg: "BroBot disconnected" };
+    return { status: 2, msg: "BroBot connected" };
   };
 
   var descriptor = {};
-  ScratchExtensions.register("demo", descriptor, ext, { type: "serial" });
+  ScratchExtensions.register("BroBot", descriptor, ext, { type: "serial" });
 })({});

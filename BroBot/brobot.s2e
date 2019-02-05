@@ -118,8 +118,44 @@
       {
         "setup": "",
         "inc": "",
-        "def": "int getDistance(){\npinMode(13, OUTPUT);\ndigitalWrite(13, LOW);\ndelayMicroseconds(2);\ndigitalWrite(13, HIGH);\ndelayMicroseconds(10);\ndigitalWrite(13, LOW);\npinMode(12, INPUT);\nreturn pulseIn(12, HIGH) / 58;\n  }",
+        "def": "int getDistance(){\npinMode(13, OUTPUT);\ndigitalWrite(13, LOW);\ndelayMicroseconds(2);\ndigitalWrite(13, HIGH);\ndelayMicroseconds(10);\ndigitalWrite(13, LOW);\npinMode(12, INPUT);\nreturn pulseIn(12, HIGH) / 58;\n}",
         "work": "getDistance()",
+        "loop": ""
+      }
+    ],
+    [
+      "b",
+      "left IR sensor is on line",
+      "digitalRead",
+      {
+        "setup": "pinMode(14, INPUT);\n",
+        "inc": "",
+        "def": "",
+        "work": "digitalRead(14)",
+        "loop": ""
+      }
+    ],
+    [
+      "b",
+      "center IR sensor is on line",
+      "digitalRead",
+      {
+        "setup": "pinMode(15, INPUT);\n",
+        "inc": "",
+        "def": "",
+        "work": "digitalRead(15)",
+        "loop": ""
+      }
+    ],
+    [
+      "b",
+      "right IR sensor is on line",
+      "digitalRead",
+      {
+        "setup": "pinMode(16, INPUT);\n",
+        "inc": "",
+        "def": "",
+        "work": "digitalRead(16)",
         "loop": ""
       }
     ]
