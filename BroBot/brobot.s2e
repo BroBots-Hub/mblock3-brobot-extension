@@ -1,0 +1,166 @@
+{
+  "extensionName": "BroBot Car",
+  "description": "Extension for BroBot Car.",
+  "version": "1.2.0",
+  "author": "andrew4ever(andrewyazura203@gmail.com)",
+  "homepage": "https://www.facebook.com/brobots.hub",
+  "sort": 0,
+  "javascriptURL": "js/brobot.js",
+  "firmware": "1.0",
+  "extensionPort": 0,
+  "blockSpecs": [
+    [
+      "h",
+      "Start BroBot",
+      "runArduino",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "#include \"BroBots_Motor_Driver.h\"\n",
+        "def": "int inPins[4] = { 3, 4, 7, 8 };\nBroBots_Motor_Driver driver(5, 6, inPins);\n",
+        "work": "",
+        "loop": ""
+      }
+    ],
+    [
+      "w",
+      "move forward at a speed of %n",
+      "spinForward",
+      "255",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "",
+        "def": "",
+        "work": "driver.spinForward({0});\n",
+        "loop": ""
+      }
+    ],
+    [
+      "w",
+      "move backwards at a speed of %n",
+      "spinBackwards",
+      "255",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "",
+        "def": "",
+        "work": "driver.spinBackwards({0});\n",
+        "loop": ""
+      }
+    ],
+    [
+      "w",
+      "stop car",
+      "stopMotors",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "",
+        "def": "",
+        "work": "driver.stopMotors();\n",
+        "loop": ""
+      }
+    ],
+    [
+      "w",
+      "spin left at speed of %n",
+      "spinLeft",
+      "255",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "",
+        "def": "",
+        "work": "driver.spinLeft({0});\n",
+        "loop": ""
+      }
+    ],
+    [
+      "w",
+      "turn left at speed of %n",
+      "turnLeft",
+      "150",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "",
+        "def": "",
+        "work": "driver.turnLeft({0}, 1.5);\n",
+        "loop": ""
+      }
+    ],
+    [
+      "w",
+      "spin right at speed of %n",
+      "spinRight",
+      "200",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "",
+        "def": "",
+        "work": "driver.spinRight({0});\n",
+        "loop": ""
+      }
+    ],
+    [
+      "w",
+      "turn right at speed of %n",
+      "turnRight",
+      "150",
+      {
+        "setup": "driver.begin();\n",
+        "inc": "",
+        "def": "",
+        "work": "driver.turnRight({0}, 1.5);\n",
+        "loop": ""
+      }
+    ],
+    [
+      "r",
+      "get distance",
+      "getDistance",
+      {
+        "setup": "",
+        "inc": "",
+        "def": "int getDistance(){\npinMode(13, OUTPUT);\ndigitalWrite(13, LOW);\ndelayMicroseconds(2);\ndigitalWrite(13, HIGH);\ndelayMicroseconds(10);\ndigitalWrite(13, LOW);\npinMode(12, INPUT);\nreturn pulseIn(12, HIGH) / 58;\n}",
+        "work": "getDistance()",
+        "loop": ""
+      }
+    ],
+    [
+      "b",
+      "left IR sensor is on line",
+      "digitalRead",
+      {
+        "setup": "pinMode(14, INPUT);\n",
+        "inc": "",
+        "def": "",
+        "work": "digitalRead(14)",
+        "loop": ""
+      }
+    ],
+    [
+      "b",
+      "center IR sensor is on line",
+      "digitalRead",
+      {
+        "setup": "pinMode(15, INPUT);\n",
+        "inc": "",
+        "def": "",
+        "work": "digitalRead(15)",
+        "loop": ""
+      }
+    ],
+    [
+      "b",
+      "right IR sensor is on line",
+      "digitalRead",
+      {
+        "setup": "pinMode(16, INPUT);\n",
+        "inc": "",
+        "def": "",
+        "work": "digitalRead(16)",
+        "loop": ""
+      }
+    ]
+  ],
+  "menus": {},
+  "values": {},
+  "translators": {}
+}
