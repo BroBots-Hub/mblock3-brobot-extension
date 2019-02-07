@@ -1,9 +1,9 @@
 {
   "extensionName": "BroBot Car",
   "description": "Extension for BroBot Car.",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "author": "andrew4ever(andrewyazura203@gmail.com)",
-  "homepage": "https://www.facebook.com/brobots.hub",
+  "homepage": "https://github.com/BroBots-Hub/mblock3-brobot-extension",
   "sort": 0,
   "javascriptURL": "js/brobot.js",
   "firmware": "1.0",
